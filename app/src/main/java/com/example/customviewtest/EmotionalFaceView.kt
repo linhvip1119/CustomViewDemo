@@ -49,6 +49,17 @@ class EmotionalFaceView : View {
     }
 
     private fun drawFaceBackground(canvas: Canvas?) {
+        paint.color = faceColor
+        paint.style = Paint.Style.FILL
+
+        val radius = size / 2f
+        canvas?.drawCircle(size / 2f, size / 2f, radius, paint)
+
+        paint.color = borderColor
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = borderWidth
+
+        canvas?.drawCircle(size / 2f, size / 2f, radius - borderWidth / 2f, paint)
 
     }
 
